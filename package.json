@@ -1,0 +1,14 @@
+{
+  "name": "lineageos-api-node-module",
+  "version": "1.0.0",
+  "description": "a node module that allow you to interact with https://download.lineageos.org/api",
+  "main": "src/module.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vincent Franchomme <vincent.franchomme@gmail.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
