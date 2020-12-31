@@ -94,5 +94,28 @@ class Client {
         });
     }
 
+    /**
+     * check if given device is officially supported by LineageOS
+     * @param {String} deviceCodename 
+     * @returns {Promise} - A promise that resolves with the info of the device like
+     * { 
+     *  model: 'guacamoleb',
+     *  oem: 'OnePlus',
+     *  name: '7',
+     *  lineage_recovery: true //Optionnal
+     * }
+     */
+    isDeviceSupported(deviceCodename){
+        return this.getDevicesList().then(_devicesList => {
+            var deviceInfo = _devicesList.find( device => device['model'] === deviceCodename );
+            if (deviceInfo === undefined){
+                throw new Error(
+                    `Device ${deviceCodename} is not officially supported by LineageOS`
+                  );
+            }
+            return deviceInfo;
+        });
+    }
+
 }
 module.exports = Client;

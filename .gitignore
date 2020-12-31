@@ -68,5 +68,8 @@ typings/
 # ignore test output
 test
 
+# ignore package lock
+package-lock.json
+
 # ignore test file
 test.js
